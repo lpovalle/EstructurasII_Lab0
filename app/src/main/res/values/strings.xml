@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Lab0</string>
+    <string name="textview">TextView</string>
+    <string name="button">Button</string>
+    <string name="buscar">Buscar</string>
+    <string name="btnbuscar">Buscar</string>
 </resources>
