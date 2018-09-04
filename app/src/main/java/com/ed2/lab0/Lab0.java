@@ -16,6 +16,7 @@ public class Lab0 extends AppCompatActivity {
     Button btnBuscar;
     TextView lbBuscar;
     EditText tbxBuscar;
+    TextView lbMostrarCancion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,8 @@ public class Lab0 extends AppCompatActivity {
         btnBuscar = (Button) findViewById(R.id.btn1);
         lbBuscar = (TextView) findViewById(R.id.lb1);
         tbxBuscar = (EditText) findViewById(R.id.tbx1);
+        lbMostrarCancion = (TextView) findViewById(R.id.lb2);
+
         final HashMap<String, cancion> diccionario = new HashMap<String, cancion>();
         final cancion nuevaCancion = null;
 
@@ -49,10 +52,17 @@ public class Lab0 extends AppCompatActivity {
                     if(diccionario.containsKey(cancionbuscada))
                     {
                         cancionencontrada = diccionario.get(cancionbuscada);
-                        Toast.makeText(getApplicationContext(), cancionencontrada.Artista ,Toast.LENGTH_LONG).show();
+                        lbMostrarCancion.setText("Nombre de la canción: " + cancionencontrada.Nombre + "\n"
+                                + "Autor: " + cancionencontrada.Artista + "\n"
+                                + "Género: " + cancionencontrada.Genero);
+
+                        Toast.makeText(getApplicationContext(), "Encontrada" ,Toast.LENGTH_LONG).show();
                     }
                     else
                     {
+                        lbMostrarCancion.setText("Nombre de la canción: -" + "\n"
+                                + "Autor: -" + "\n"
+                                + "Género: -");
                         Toast.makeText(getApplicationContext(), "No existe",Toast.LENGTH_LONG).show();
                     }
 
