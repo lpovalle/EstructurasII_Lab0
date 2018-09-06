@@ -33,7 +33,7 @@ public class Lab0 extends AppCompatActivity {
         lbMostrarCancion = (TextView) findViewById(R.id.lb2);
 
         final HashMap<String, cancion> diccionario = new HashMap<String, cancion>();
-        final cancion nuevaCancion = null;
+
 
         diccionario.put("When I'm gone", new cancion("When I'm gone","EMINEM", "Rap/Hip-Hop", 3.15));
         diccionario.put("99 problems", new cancion("99 problems","Jay Z", "Rap/Hip-Hop", 4.20));
