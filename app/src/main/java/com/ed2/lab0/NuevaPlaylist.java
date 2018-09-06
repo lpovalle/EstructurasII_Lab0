@@ -3,13 +3,13 @@ package com.ed2.lab0;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class NuevaPlaylist extends AppCompatActivity {
 
@@ -27,7 +27,7 @@ public class NuevaPlaylist extends AppCompatActivity {
 
 
         cancion nuevaCancion = null;
-        final List<cancion> playlist = new ArrayList<cancion>();
+        final ArrayList<cancion> playlist = new ArrayList<cancion>();
 
         btnAgregar = (Button) findViewById(R.id.btn3);
         tbxCancion = (EditText) findViewById(R.id.tbx2);
@@ -35,6 +35,7 @@ public class NuevaPlaylist extends AppCompatActivity {
         tbxGenero = (EditText) findViewById(R.id.tbx4);
         tbxDuracion = (EditText) findViewById(R.id.tbx5);
         lista = (ListView) findViewById(R.id.playlist);
+        final ArrayAdapter adaptador = new ArrayAdapter(this, android.R.layout.simple_list_item_1, playlist);
 
 
         btnAgregar.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +62,7 @@ public class NuevaPlaylist extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Canción agregada", Toast.LENGTH_LONG).show();
 
                     Integer tamaño = playlist.size();
-
+                    lista.setAdapter(adaptador);
 
 
 
